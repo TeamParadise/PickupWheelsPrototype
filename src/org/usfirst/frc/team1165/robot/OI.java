@@ -4,9 +4,10 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team1165.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinIn;
+import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinLeft;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinOut;
+import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinRight;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -50,8 +51,10 @@ public class OI
 
 	public OI()
 	{
-		SmartDashboard.putData(new PickupWheelsSpinOut());
 		SmartDashboard.putData(new PickupWheelsSpinIn());
+		SmartDashboard.putData(new PickupWheelsSpinOut());
+		SmartDashboard.putData(new PickupWheelsSpinRight());
+		SmartDashboard.putData(new PickupWheelsSpinLeft());
 	}
 
 	public double driveSpeedX()
