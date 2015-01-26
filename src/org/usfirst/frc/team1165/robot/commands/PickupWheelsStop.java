@@ -7,10 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class PickupWheelsSpinIn extends Command
+public class PickupWheelsStop extends Command
 {
 
-	public PickupWheelsSpinIn()
+	private boolean isFinished = false;
+
+	public PickupWheelsStop()
 	{
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
@@ -26,19 +28,21 @@ public class PickupWheelsSpinIn extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.pickupWheels.spinIn(0.5);
+		Robot.pickupWheels.idle();
+		isFinished = true;
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return false;
+		return isFinished;
 	}
 
 	// Called once after isFinished returns true
 	protected void end()
 	{
 		Robot.pickupWheels.idle();
+		new RunPickupWheelsFromJoystick();
 	}
 
 	// Called when another command which requires one or more of the same

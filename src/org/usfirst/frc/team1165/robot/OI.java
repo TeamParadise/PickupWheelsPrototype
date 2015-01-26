@@ -8,6 +8,7 @@ import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinIn;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinLeft;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinOut;
 import org.usfirst.frc.team1165.robot.commands.PickupWheelsSpinRight;
+import org.usfirst.frc.team1165.robot.commands.PickupWheelsStop;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -51,6 +52,7 @@ public class OI
 
 	public OI()
 	{
+		SmartDashboard.putData(new PickupWheelsStop());
 		SmartDashboard.putData(new PickupWheelsSpinIn());
 		SmartDashboard.putData(new PickupWheelsSpinOut());
 		SmartDashboard.putData(new PickupWheelsSpinRight());
