@@ -27,26 +27,35 @@ public class RunPickupWheelsFromJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		double magnitudeX = Math.abs(OI.getInstance().pickupSpeedX());
-		double magnitudeY = Math.abs(OI.getInstance().pickupSpeedY());
+		final double pickupSpeedX = OI.getInstance().pickupSpeedX();
+		final double pickupSpeedY = OI.getInstance().pickupSpeedY();
+		
+		final double magnitudeX = Math.abs(pickupSpeedX);
+		final double magnitudeY = Math.abs(pickupSpeedY);
 
-		if (magnitudeY > 0.1
-				&& OI.getInstance().pickupSpeedY() > magnitudeX * 2)
+		if (magnitudeY > 0.1 && magnitudeY > magnitudeX * 2)
 		{
-			Robot.pickupWheels.spinOut(magnitudeY);
-		} else if (magnitudeY < 0.1
-				&& OI.getInstance().pickupSpeedY() < magnitudeX * -2)
+			if (pickupSpeedY > 0)
+			{
+				Robot.pickupWheels.spinOut(magnitudeY);
+			}
+			else
+			{
+				Robot.pickupWheels.spinIn(magnitudeY);				
+			}
+		}
+		else if (magnitudeX > 0.1 && magnitudeX > magnitudeY * 2)
 		{
-			Robot.pickupWheels.spinIn(magnitudeY);
-		} else if (magnitudeX > 0.1
-				&& OI.getInstance().pickupSpeedX() > magnitudeY * 2)
-		{
-			Robot.pickupWheels.spinRight(magnitudeX);
-		} else if (magnitudeX < 0.1
-				&& OI.getInstance().pickupSpeedX() < magnitudeY * -2)
-		{
-			Robot.pickupWheels.spinLeft(magnitudeX);
-		} else
+			if (pickupSpeedX > 0)
+			{
+				Robot.pickupWheels.spinRight(magnitudeX);
+			}
+			else
+			{
+				Robot.pickupWheels.spinLeft(magnitudeX);
+			}
+		}
+		else
 		{
 			Robot.pickupWheels.idle();
 		}
