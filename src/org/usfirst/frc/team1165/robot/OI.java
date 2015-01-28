@@ -65,7 +65,7 @@ public class OI
 
 	public double driveSpeedY()
 	{
-		return mainJoystick.getY();
+		return -mainJoystick.getY();
 	}
 
 	public double pickupSpeedX()
@@ -78,6 +78,11 @@ public class OI
 		// Pushing forward on the joystick returns negative y values.
 		// We want the reverse of that.
 		return -secondaryJoystick.getY();
+	}
+	
+	public double twistAngle()
+	{
+		return secondaryJoystick.getTwist();
 	}
 
 	public static OI getInstance()

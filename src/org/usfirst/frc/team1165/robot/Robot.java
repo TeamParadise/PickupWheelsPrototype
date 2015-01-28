@@ -4,10 +4,10 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
 import org.usfirst.frc.team1165.robot.commands.RunPickupWheelsFromJoystick;
-import org.usfirst.frc.team1165.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1165.robot.subsystems.PickupWheels;
-import org.usfirst.frc.team1165.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team1165.robot.subsystems.ServoMotor;
 
 ;
 
@@ -21,8 +21,9 @@ import org.usfirst.frc.team1165.robot.subsystems.ExampleSubsystem;
 public class Robot extends IterativeRobot
 {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final PickupWheels pickupWheels = new PickupWheels();
+	public static final ServoMotor servoMotor = new ServoMotor();
 	public static OI oi;
 
 	Command autonomousCommand;
@@ -35,7 +36,7 @@ public class Robot extends IterativeRobot
 	{
 		oi = new OI();
 		// instantiate the command used for the autonomous period
-		autonomousCommand = new ExampleCommand();
+		autonomousCommand = null;
 	}
 
 	public void disabledPeriodic()
