@@ -18,9 +18,14 @@ public class ServoMotor extends Subsystem
 	 * 
 	 * @param angle
 	 */
-	public void spinToAngle(int angle)
+	public void spinToAngle(double angle)
 	{
 		servoMotor.setAngle(angle);
+	}
+	
+	public void spinToPosition(double position)
+	{
+		servoMotor.set(position);
 	}
 	
 	/**
@@ -28,7 +33,7 @@ public class ServoMotor extends Subsystem
 	 */
 	public void reset()
 	{
-		servoMotor.setAngle(0);
+		servoMotor.set(0.5);
 	}
 
 	public void initDefaultCommand()
