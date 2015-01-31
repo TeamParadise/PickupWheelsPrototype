@@ -27,9 +27,9 @@ public class RunServoMotorFromJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		int angle = (int) (Math.round(OI.getInstance().twistAngle()) + 1) * 90;
+		int angle = (int) (Math.round(Robot.oi.twistAngle()) + 1) * 90;
 		
-		Robot.servoMotor.spinToPosition((OI.getInstance().twistAngle() + 1) / 2);
+		Robot.servoMotor.spinToPosition((Robot.oi.twistAngle() + 1) / 2);
 		
 		//Robot.servoMotor.spinToAngle(angle);
 	}

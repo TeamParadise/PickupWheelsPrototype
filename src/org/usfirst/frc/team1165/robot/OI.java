@@ -44,8 +44,6 @@ public class OI
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 
-	private static final OI instance = new OI();
-
 	private final Joystick mainJoystick = new Joystick(RobotMap.joystickPort1);
 	private final Joystick secondaryJoystick = new Joystick(RobotMap.joystickPort2);
 
@@ -83,10 +81,5 @@ public class OI
 	public double twistAngle()
 	{
 		return secondaryJoystick.getTwist();
-	}
-
-	public static OI getInstance()
-	{
-		return instance;
 	}
 }

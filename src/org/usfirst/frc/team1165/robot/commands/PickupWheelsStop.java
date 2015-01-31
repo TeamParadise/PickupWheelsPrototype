@@ -29,20 +29,18 @@ public class PickupWheelsStop extends Command
 	protected void execute()
 	{
 		Robot.pickupWheels.idle();
-		isFinished = true;
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return isFinished;
+		return false;
 	}
 
 	// Called once after isFinished returns true
 	protected void end()
 	{
 		Robot.pickupWheels.idle();
-		new RunPickupWheelsFromJoystick();
 	}
 
 	// Called when another command which requires one or more of the same

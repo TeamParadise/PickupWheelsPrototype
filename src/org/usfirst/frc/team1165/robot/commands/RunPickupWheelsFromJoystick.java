@@ -27,8 +27,8 @@ public class RunPickupWheelsFromJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		final double pickupSpeedX = OI.getInstance().pickupSpeedX();
-		final double pickupSpeedY = OI.getInstance().pickupSpeedY();
+		final double pickupSpeedX = Robot.oi.pickupSpeedX();
+		final double pickupSpeedY = Robot.oi.pickupSpeedY();
 		
 		final double magnitudeX = Math.abs(pickupSpeedX);
 		final double magnitudeY = Math.abs(pickupSpeedY);
