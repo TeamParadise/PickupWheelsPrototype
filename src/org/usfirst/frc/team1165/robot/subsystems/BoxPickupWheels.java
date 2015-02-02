@@ -1,7 +1,7 @@
 package org.usfirst.frc.team1165.robot.subsystems;
 
 import org.usfirst.frc.team1165.robot.RobotMap;
-import org.usfirst.frc.team1165.robot.commands.RunPickupWheelsFromJoystick;
+import org.usfirst.frc.team1165.robot.commands.RunBoxPickupWheelsFromJoystick;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class PickupWheels extends Subsystem
+public class BoxPickupWheels extends Subsystem
 {
-	Victor leftPickupWheel = new Victor(RobotMap.leftPickupWheel);
-	Victor rightPickupWheel = new Victor(RobotMap.rightPickupWheel);
+	Victor leftPickupWheel = new Victor(RobotMap.leftBoxPickupWheel);
+	Victor rightPickupWheel = new Victor(RobotMap.rightBoxPickupWheel);
 
 	/**
 	 * Accepts a value in the form of a double or float from -1 to 1 and takes
@@ -80,6 +80,6 @@ public class PickupWheels extends Subsystem
 
 	public void initDefaultCommand()
 	{
-		setDefaultCommand(new RunPickupWheelsFromJoystick());
+		setDefaultCommand(new RunBoxPickupWheelsFromJoystick());
 	}
 }

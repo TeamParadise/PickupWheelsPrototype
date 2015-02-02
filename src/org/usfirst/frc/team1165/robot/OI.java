@@ -46,6 +46,7 @@ public class OI
 
 	private final Joystick mainJoystick = new Joystick(RobotMap.joystickPort1);
 	private final Joystick secondaryJoystick = new Joystick(RobotMap.joystickPort2);
+	private final Joystick tertiaryJoystick = new Joystick(RobotMap.joystickPort3);
 
 	public OI()
 	{
@@ -66,16 +67,28 @@ public class OI
 		return -mainJoystick.getY();
 	}
 
-	public double pickupSpeedX()
+	public double boxPickupSpeedX()
 	{
 		return secondaryJoystick.getX();
 	}
 
-	public double pickupSpeedY()
+	public double boxPickupSpeedY()
 	{
 		// Pushing forward on the joystick returns negative y values.
 		// We want the reverse of that.
 		return -secondaryJoystick.getY();
+	}
+	
+	public boolean shouldPickupCan()
+	{
+		if (tertiaryJoystick.getY() < -0.1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public double twistAngle()

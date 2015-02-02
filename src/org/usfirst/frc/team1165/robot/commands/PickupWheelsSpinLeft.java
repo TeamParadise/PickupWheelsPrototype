@@ -14,19 +14,19 @@ public class PickupWheelsSpinLeft extends Command
 	{
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
-		requires(Robot.pickupWheels);
+		requires(Robot.boxPickupWheels);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		Robot.pickupWheels.idle();
+		Robot.boxPickupWheels.idle();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.pickupWheels.spinLeft(0.5);
+		Robot.boxPickupWheels.spinLeft(0.5);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -38,7 +38,7 @@ public class PickupWheelsSpinLeft extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-		Robot.pickupWheels.idle();
+		Robot.boxPickupWheels.idle();
 	}
 
 	// Called when another command which requires one or more of the same

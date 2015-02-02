@@ -19,9 +19,13 @@ public class RobotMap
 	// public static int rangefinderModule = 1;
 	public static final int joystickPort1 = 1;
 	public static final int joystickPort2 = 2;
+	public static final int joystickPort3 = 3;
+	
+	public static final int leftTrashCanPickupMotor = 5;
+	public static final int rightTrashCanPickupMotor = 6;
 	
 	public static final int servoMotor = 7;
 
-	public static final int leftPickupWheel = 8;
-	public static final int rightPickupWheel = 9;
+	public static final int leftBoxPickupWheel = 8;
+	public static final int rightBoxPickupWheel = 9;
 }

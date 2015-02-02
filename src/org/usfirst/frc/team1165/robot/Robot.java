@@ -5,9 +5,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team1165.robot.commands.RunPickupWheelsFromJoystick;
-import org.usfirst.frc.team1165.robot.subsystems.PickupWheels;
+import org.usfirst.frc.team1165.robot.commands.RunBoxPickupWheelsFromJoystick;
+import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
 import org.usfirst.frc.team1165.robot.subsystems.ServoMotor;
+import org.usfirst.frc.team1165.robot.subsystems.TrashCanPickupMotors;
 
 ;
 
@@ -22,7 +23,8 @@ public class Robot extends IterativeRobot
 {
 
 	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static final PickupWheels pickupWheels = new PickupWheels();
+	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
+	public static final TrashCanPickupMotors trashCanPickupMotors = new TrashCanPickupMotors();
 	public static final ServoMotor servoMotor = new ServoMotor();
 	public static OI oi;
 
@@ -67,7 +69,7 @@ public class Robot extends IterativeRobot
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
-		new RunPickupWheelsFromJoystick();
+		new RunBoxPickupWheelsFromJoystick();
 	}
 
 	/**

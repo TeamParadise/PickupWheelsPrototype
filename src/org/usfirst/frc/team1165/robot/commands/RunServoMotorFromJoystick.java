@@ -1,6 +1,5 @@
 package org.usfirst.frc.team1165.robot.commands;
 
-import org.usfirst.frc.team1165.robot.OI;
 import org.usfirst.frc.team1165.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -27,11 +26,7 @@ public class RunServoMotorFromJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		int angle = (int) (Math.round(Robot.oi.twistAngle()) + 1) * 90;
-		
-		Robot.servoMotor.spinToPosition((Robot.oi.twistAngle() + 1) / 2);
-		
-		//Robot.servoMotor.spinToAngle(angle);
+		Robot.servoMotor.spinToPosition((Robot.oi.twistAngle() + 1.0) / 2.0);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

@@ -13,23 +13,13 @@ public class ServoMotor extends Subsystem
 {
 	Servo servoMotor = new Servo(RobotMap.servoMotor);
 	
-	/**
-	 * Accepts a value from 0 to 180 and sets the servo to the given angle
-	 * 
-	 * @param angle
-	 */
-	public void spinToAngle(double angle)
-	{
-		servoMotor.setAngle(angle);
-	}
-	
 	public void spinToPosition(double position)
 	{
 		servoMotor.set(position);
 	}
 	
 	/**
-	 * Resets the servo back to the default position at an angle of 90Â°
+	 * Resets the servo back to the default position at an angle of 90°
 	 */
 	public void reset()
 	{

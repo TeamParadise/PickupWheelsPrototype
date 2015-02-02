@@ -1,6 +1,5 @@
 package org.usfirst.frc.team1165.robot.commands;
 
-import org.usfirst.frc.team1165.robot.OI;
 import org.usfirst.frc.team1165.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -8,27 +7,27 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class RunPickupWheelsFromJoystick extends Command
+public class RunBoxPickupWheelsFromJoystick extends Command
 {
 
-	public RunPickupWheelsFromJoystick()
+	public RunBoxPickupWheelsFromJoystick()
 	{
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
-		requires(Robot.pickupWheels);
+		requires(Robot.boxPickupWheels);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		Robot.pickupWheels.idle();
+		Robot.boxPickupWheels.idle();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		final double pickupSpeedX = Robot.oi.pickupSpeedX();
-		final double pickupSpeedY = Robot.oi.pickupSpeedY();
+		final double pickupSpeedX = Robot.oi.boxPickupSpeedX();
+		final double pickupSpeedY = Robot.oi.boxPickupSpeedY();
 		
 		final double magnitudeX = Math.abs(pickupSpeedX);
 		final double magnitudeY = Math.abs(pickupSpeedY);
@@ -37,27 +36,27 @@ public class RunPickupWheelsFromJoystick extends Command
 		{
 			if (pickupSpeedY > 0)
 			{
-				Robot.pickupWheels.spinOut(magnitudeY);
+				Robot.boxPickupWheels.spinOut(magnitudeY);
 			}
 			else
 			{
-				Robot.pickupWheels.spinIn(magnitudeY);				
+				Robot.boxPickupWheels.spinIn(magnitudeY);				
 			}
 		}
 		else if (magnitudeX > 0.1 && magnitudeX > magnitudeY * 2)
 		{
 			if (pickupSpeedX > 0)
 			{
-				Robot.pickupWheels.spinRight(magnitudeX);
+				Robot.boxPickupWheels.spinRight(magnitudeX);
 			}
 			else
 			{
-				Robot.pickupWheels.spinLeft(magnitudeX);
+				Robot.boxPickupWheels.spinLeft(magnitudeX);
 			}
 		}
 		else
 		{
-			Robot.pickupWheels.idle();
+			Robot.boxPickupWheels.idle();
 		}
 	}
 
@@ -70,7 +69,7 @@ public class RunPickupWheelsFromJoystick extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-		Robot.pickupWheels.idle();
+		Robot.boxPickupWheels.idle();
 	}
 
 	// Called when another command which requires one or more of the same
