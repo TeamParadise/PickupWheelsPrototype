@@ -21,8 +21,6 @@ import org.usfirst.frc.team1165.robot.subsystems.TrashCanPickupMotors;
  */
 public class Robot extends IterativeRobot
 {
-
-	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
 	public static final TrashCanPickupMotors trashCanPickupMotors = new TrashCanPickupMotors();
 	public static final ServoMotor servoMotor = new ServoMotor();

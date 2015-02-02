@@ -12,8 +12,6 @@ public class PickupWheelsSpinLeft extends Command
 
 	public PickupWheelsSpinLeft()
 	{
-		// Use requires() here to declare subsystem dependencies
-		// eg. requires(chassis);
 		requires(Robot.boxPickupWheels);
 	}
 

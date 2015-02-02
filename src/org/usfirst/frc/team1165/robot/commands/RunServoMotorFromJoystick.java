@@ -12,8 +12,6 @@ public class RunServoMotorFromJoystick extends Command
 
 	public RunServoMotorFromJoystick()
 	{
-		// Use requires() here to declare subsystem dependencies
-		// eg. requires(chassis);
 		requires(Robot.servoMotor);
 	}
 

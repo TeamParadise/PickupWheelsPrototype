@@ -14,8 +14,6 @@ public class PickupWheelsStop extends Command
 
 	public PickupWheelsStop()
 	{
-		// Use requires() here to declare subsystem dependencies
-		// eg. requires(chassis);
 		requires(Robot.boxPickupWheels);
 	}
 

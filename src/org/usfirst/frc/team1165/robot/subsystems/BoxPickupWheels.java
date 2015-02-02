@@ -6,9 +6,6 @@ import org.usfirst.frc.team1165.robot.commands.RunBoxPickupWheelsFromJoystick;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class BoxPickupWheels extends Subsystem
 {
 	Victor leftPickupWheel = new Victor(RobotMap.leftBoxPickupWheel);

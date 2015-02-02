@@ -11,8 +11,6 @@ public class RunTrashCanPickupMotorsFromJoystick extends Command
 
 	public RunTrashCanPickupMotorsFromJoystick()
 	{
-		// Use requires() here to declare subsystem dependencies
-		// eg. requires(chassis);
 		requires(Robot.trashCanPickupMotors);
 	}
 

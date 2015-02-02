@@ -6,9 +6,6 @@ import org.usfirst.frc.team1165.robot.commands.RunTrashCanPickupMotorsFromJoysti
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-/**
- *
- */
 public class TrashCanPickupMotors extends Subsystem
 {    
     Talon leftTrashCanPickupMotor = new Talon(RobotMap.leftTrashCanPickupMotor);
@@ -46,7 +43,6 @@ public class TrashCanPickupMotors extends Subsystem
 
     public void initDefaultCommand()
     {
-        // Set the default command for a subsystem here.
         setDefaultCommand(new RunTrashCanPickupMotorsFromJoystick());
     }
 }
