@@ -81,6 +81,7 @@ public class OI
 	
 	public boolean shouldPickupCan()
 	{
+		// The trash can pickup motors should always run at a specific speed so we don't want to return the speed at which to spin them
 		if (tertiaryJoystick.getY() < -0.1)
 		{
 			return true;
