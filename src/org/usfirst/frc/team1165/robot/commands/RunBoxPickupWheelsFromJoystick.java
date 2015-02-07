@@ -38,7 +38,7 @@ public class RunBoxPickupWheelsFromJoystick extends Command
 			}
 			else
 			{
-				Robot.boxPickupWheels.spinIn(magnitudeY);				
+				Robot.boxPickupWheels.spinIn(magnitudeY);
 			}
 		}
 		else if (magnitudeX > 0.1 && magnitudeX > magnitudeY * 2)

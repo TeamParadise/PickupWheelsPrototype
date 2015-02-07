@@ -11,13 +11,14 @@ public class RunTrashCanPickupMotorsFromJoystick extends Command
 
 	public RunTrashCanPickupMotorsFromJoystick()
 	{
-		requires(Robot.trashCanPickupMotors);
+		requires(Robot.leftTrashCanPickupMotor);
+		requires(Robot.rightTrashCanPickupMotor);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		Robot.trashCanPickupMotors.reset();
+		//Robot.trashCanPickupMotors.reset();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -26,11 +27,11 @@ public class RunTrashCanPickupMotorsFromJoystick extends Command
 		boolean runMotors = Robot.oi.shouldPickupCan();
 		if (runMotors)
 		{
-			Robot.trashCanPickupMotors.pickUp();
+			//Robot.trashCanPickupMotors.pickUp();
 		}
 		else
 		{
-			Robot.trashCanPickupMotors.reset();
+			//Robot.trashCanPickupMotors.reset();
 		}
 	}
 
@@ -43,7 +44,7 @@ public class RunTrashCanPickupMotorsFromJoystick extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-		Robot.trashCanPickupMotors.reset();
+		//Robot.trashCanPickupMotors.reset();
 	}
 
 	// Called when another command which requires one or more of the same

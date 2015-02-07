@@ -7,8 +7,9 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1165.robot.commands.RunBoxPickupWheelsFromJoystick;
 import org.usfirst.frc.team1165.robot.subsystems.BoxPickupWheels;
+import org.usfirst.frc.team1165.robot.subsystems.LeftTrashCanPickupMotor;
+import org.usfirst.frc.team1165.robot.subsystems.RightTrashCanPickupMotor;
 import org.usfirst.frc.team1165.robot.subsystems.ServoMotor;
-import org.usfirst.frc.team1165.robot.subsystems.TrashCanPickupMotors;
 
 ;
 
@@ -22,7 +23,9 @@ import org.usfirst.frc.team1165.robot.subsystems.TrashCanPickupMotors;
 public class Robot extends IterativeRobot
 {
 	public static final BoxPickupWheels boxPickupWheels = new BoxPickupWheels();
-	public static final TrashCanPickupMotors trashCanPickupMotors = new TrashCanPickupMotors();
+	//public static final TrashCanPickupMotors trashCanPickupMotors = new TrashCanPickupMotors();
+	public static final LeftTrashCanPickupMotor leftTrashCanPickupMotor = new LeftTrashCanPickupMotor();
+	public static final RightTrashCanPickupMotor rightTrashCanPickupMotor = new RightTrashCanPickupMotor();
 	public static final ServoMotor servoMotor = new ServoMotor();
 	public static OI oi;
 
