@@ -3,6 +3,7 @@ package org.usfirst.frc.team1165.robot.subsystems;
 import org.usfirst.frc.team1165.robot.RobotMap;
 import org.usfirst.frc.team1165.robot.commands.RunTrashCanPickupMotorsFromJoystick;
 
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
@@ -11,11 +12,11 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  */
 public class LeftTrashCanPickupMotor extends PIDSubsystem //Master subsystem
 {
-
 	Talon motor = new Talon(RobotMap.leftTrashCanPickupMotor);
+	AnalogPotentiometer pot = new AnalogPotentiometer(RobotMap.leftPot);
 
 	public static final double LOWERED = 0;
-	public static final double RAISED = 125;
+	public static final double RAISED = 5.0;
 
 	public LeftTrashCanPickupMotor()
 	{
@@ -24,7 +25,8 @@ public class LeftTrashCanPickupMotor extends PIDSubsystem //Master subsystem
 		// to
 		// enable() - Enables the PID controller.
 		super("LeftMotor", 1, 0, 0);
-
+		setAbsoluteTolerance(0.05);
+		getPIDController().setContinuous(false);
 		setSetpoint(LOWERED);
 		enable();
 	}
@@ -41,7 +43,7 @@ public class LeftTrashCanPickupMotor extends PIDSubsystem //Master subsystem
 		// Return your input value for the PID loop
 		// e.g. a sensor, like a potentiometer:
 		// yourPot.getAverageVoltage() / kYourMaxVoltage;
-		return 0.0;
+		return pot.get();
 	}
 
 	protected void usePIDOutput(double output)

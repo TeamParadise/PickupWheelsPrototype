@@ -29,4 +29,7 @@ public class RobotMap
 
 	public static final int leftBoxPickupWheel = 8;
 	public static final int rightBoxPickupWheel = 9;
+	
+	public static final int leftPot = 1;
+	public static final int rightPot = 2;
 }
